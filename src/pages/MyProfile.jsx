@@ -18,7 +18,7 @@ const MyProfile = () => {
   //   dob: '1999-01-01',
   // })
 
-  const {userData,setUserData,token,backendUrl , loadUserProfileData}=useContext(AppContext)
+  const {userData,setUserData,token , loadUserProfileData}=useContext(AppContext)
 
   const [isEdit, setIsEdit] = useState(false)
   const [image,setImage]=useState(false)
@@ -36,7 +36,7 @@ const MyProfile = () => {
 
         image && formData.append("image",image)
 
-        const {data}= await axios.post(backendUrl + "/api/user/update-profile",formData,{headers:{token}})
+        const {data}= await axios.post("/api/user/update-profile",formData,{headers:{token}})
 
         if(data.success){
           toast.success(data.message)

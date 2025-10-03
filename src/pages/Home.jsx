@@ -12,7 +12,6 @@ import { Link } from 'react-router-dom';
 
 
 const Home = () => {
-  const backendUrl = import.meta.env.VITE_BACKEND_URL;
   
   return (
     <div className="min-h-screen bg-gray-50">

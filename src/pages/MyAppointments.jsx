@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 
 
 const MyAppointments = () => {
-  const { backendUrl, token, getDoctorsData } = useContext(AppContext);
+  const {token, getDoctorsData } = useContext(AppContext);
   const [appointments, setAppointments] = useState([]);
 
 
@@ -16,7 +16,7 @@ const MyAppointments = () => {
 
   const getUserAppointments = async () => {
     try {
-      const response = await fetch(`${backendUrl}/api/user/appointments`, {
+      const response = await fetch(`/api/user/appointments`, {
         headers: { token }
       });
       const data = await response.json();
@@ -30,7 +30,7 @@ const MyAppointments = () => {
 
   const cancelAppointment = async (appointmentId) => {
     try {
-      const response = await fetch(`${backendUrl}/api/user/cancel-appointment`, {
+      const response = await fetch(`/api/user/cancel-appointment`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
