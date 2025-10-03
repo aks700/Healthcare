@@ -33,20 +33,20 @@ const loginDoctor = async (req, res) => {
         const doctor = await doctorModel.findOne({ email })
 
         if (!doctor) {
-            return res.json({ success: false, message: 'Invalid Credentials' })
+            return res.status(401).json({ success: false, message: 'Invalid Credentials' })
         }
         const isMatch = await bcrypt.compare(password, doctor.password)
 
         if (isMatch) {
             const token = jwt.sign({ id: doctor._id }, process.env.JWT_SECRET)
-            res.json({ success: true, token })
+            res.status(200).json({ success: true, token })
         } else {
-            res.json({ success: false, message: 'Invalid Credentials' })
+            res.status(401).json({ success: false, message: 'Invalid Credentials' })
         }
 
     } catch (error) {
         console.log(error)
-        res.json({ success: false, message: error.message })
+        res.status(500).json({ success: false, message: error.message })
     }
 }
 
