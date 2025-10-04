@@ -67,7 +67,7 @@ const Navbar = () => {
       </ul>
       <div>
   <a 
-    href="http://localhost:5174" 
+    href="https://healthcare-admin-seven.vercel.app/" 
     target="_blank" 
     rel="noreferrer"
     className="bg-primary text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-opacity-90 transition-all duration-200"
