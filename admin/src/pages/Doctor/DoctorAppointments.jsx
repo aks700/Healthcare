@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { DoctorContext } from '../../context/DoctorContext'
 import { AppContext } from '../../context/AppContext'
 import { assets } from '../../assets/assets'
-import DoctorVideoChat from '../../components/DoctorVideoChat'
+
 
 const DoctorAppointments = () => {
   const { dToken, appointments, getAppointments, completeAppointment, cancelAppointment } = useContext(DoctorContext)
@@ -336,14 +336,6 @@ const DoctorAppointments = () => {
         </div>
       </div>
 
-      {/* Video Chat Modal */}
-      {showVideoChat && selectedAppointment && (
-        <DoctorVideoChat
-          appointmentId={selectedAppointment._id}
-          isDoctor={true}
-          onClose={closeVideoChat}
-        />
-      )}
     </div>
   )
 }

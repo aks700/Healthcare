@@ -140,14 +140,6 @@ const DoctorsList = () => {
               >
                 {/* Doctor Image */}
                 <div className="relative overflow-hidden h-70 bg-gradient-to-br from-blue-50 to-indigo-100">
-                  <img 
-                    className='w-full h-full object-cover group-hover:scale-110 transition-transform duration-500' 
-                    src={item.image} 
-                    alt={item.name}
-                    onError={(e) => {
-                      e.target.src = '/api/placeholder/300/200'
-                    }}
-                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   
                   {/* Availability Badge */}

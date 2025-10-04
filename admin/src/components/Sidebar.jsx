@@ -31,8 +31,6 @@ const Sidebar = () => {
             <SidebarLink to="/all-appointments" icon={assets.appointment_icon} label="Appointments" />
             <SidebarLink to="/add-doctor" icon={assets.add_icon} label="Add Doctor" />
             <SidebarLink to="/doctor-list" icon={assets.people_icon} label="Doctor List" />
-            <SidebarLink to="/admin-blogs" icon={assets.home_icon} label="All Blogs" />
-            <SidebarLink to="/blog-analytics" icon={assets.people_icon} label="Blog Analytics" />
           </>
         )}
         {dToken && (
@@ -40,10 +38,7 @@ const Sidebar = () => {
             <SidebarLink to="/doctor-dashboard" icon={assets.home_icon} label="Dashboard" />
             <SidebarLink to="/doctor-appointments" icon={assets.appointment_icon} label="Appointments" />
             <SidebarLink to="/doctor-profile" icon={assets.people_icon} label="Doctor Profile" />
-            <SidebarLink to="/doctor-reviews" icon={assets.star_icon} label="Doctor Reviews" />
-            <SidebarLink to="/doctor-blogs" icon={assets.people_icon} label="Doctor Blogs" />
-            <SidebarLink to="/create-blog" icon={assets.home_icon} label="Create Blog" />
-            {/* <SidebarLink to="/edit-blog" icon={assets.home_icon} label="Edit Blog" /> */}
+  
           </>
         )}
       </ul>

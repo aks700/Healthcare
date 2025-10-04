@@ -12,11 +12,10 @@ export const AdminContextProvider = ( props ) => {
     const [appointments,setAppointments]=useState([])
     const [dashData,setDashData]=useState(false)
 
-    const backendUrl=import.meta.env.VITE_BACKEND_URL
 
     const getAllDoctors=async()=>{
         try {
-            const {data}= await axios.post(backendUrl +"/api/admin/all-doctors",{},{headers:{aToken}}) 
+            const {data}= await axios.post("/api/admin/all-doctors",{},{headers: { Authorization: `Bearer ${aToken}` }}) 
             if (data.success) {
                 setDoctors(data.doctors)
                 // console.log(data.doctors)
@@ -33,7 +32,7 @@ export const AdminContextProvider = ( props ) => {
 
     const changeAvailability=async (docId)=>{
         try {
-                const {data}=await axios.post(backendUrl + "/api/admin/change-availablity",{docId},{headers:{aToken}})
+                const {data}=await axios.post("/api/admin/change-availablity",{docId},{headers: { Authorization: `Bearer ${aToken}` }})
             if(data.success){
                 toast.success(data.message)
                 getAllDoctors()
@@ -47,7 +46,7 @@ export const AdminContextProvider = ( props ) => {
 
     const getAllAppointments = async ()=>{
         try {
-            const {data}= await axios.get(backendUrl + "/api/admin/appointments",{headers:{aToken}})
+            const {data}= await axios.get("/api/admin/appointments",{headers: { Authorization: `Bearer ${aToken}` }})
             if(data.success){
                 setAppointments(data.appointments)
                 // console.log(data.appointments)
@@ -61,7 +60,7 @@ export const AdminContextProvider = ( props ) => {
 
     const cancelAppointment = async (appointmentId)=>{
         try {
-            const {data}=await axios.post(backendUrl + "/api/admin/cancel-appointment",{appointmentId},{headers:{aToken}})
+            const {data}=await axios.post("/api/admin/cancel-appointment",{appointmentId},{headers: { Authorization: `Bearer ${aToken}` }})
             if(data.success){
                 toast.success(data.message)
                 getAllAppointments()
@@ -75,7 +74,7 @@ export const AdminContextProvider = ( props ) => {
 
     const getDashData = async ()=>{
         try {
-            const {data}=await axios.get(backendUrl + "/api/admin/dashboard",{headers:{aToken}})
+            const {data}=await axios.get("/api/admin/dashboard",{headers: { Authorization: `Bearer ${aToken}` }})
             if(data.success){
                 setDashData(data.dashData)
                 // console.log(data.dashData)
@@ -92,7 +91,6 @@ export const AdminContextProvider = ( props ) => {
         // Define any state or functions you want to provide to the context
         aToken,
         setAToken, 
-        backendUrl,
         doctors,getAllDoctors,changeAvailability,
         appointments, setAppointments,getAllAppointments,
         cancelAppointment,

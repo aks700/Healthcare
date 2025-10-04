@@ -8,7 +8,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const DoctorProfile = () => {
-  const { dToken, profileData, setProfileData, getProfileData, backendUrl } = useContext(DoctorContext)
+  const { dToken, profileData, setProfileData, getProfileData } = useContext(DoctorContext)
   const { currency } = useContext(AppContext)
 
   const [isEdit, setIsEdit] = useState(false)
@@ -22,7 +22,7 @@ const DoctorProfile = () => {
         fees: profileData.fees,
         available: profileData.available
       }
-      const { data } = await axios.post(backendUrl + "/api/doctor/update-profile", updateData, { headers: { dToken } })
+      const { data } = await axios.post("/api/doctor/update-profile", updateData, { headers: { Authorization: `Bearer ${dToken}` } })
       if (data.success) {
         toast.success(data.message)
         setIsEdit(false)

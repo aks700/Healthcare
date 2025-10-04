@@ -7,7 +7,6 @@ export const AppContext = createContext()
 
 const AppContextProvider = (props) => {
     const currency = "₹"
-    const backendUrl = import.meta.env.VITE_BACKEND_URL
     const [dToken, setDToken] = useState(localStorage.getItem("dToken") ? localStorage.getItem("dToken") : "")
 
 
@@ -30,7 +29,6 @@ const AppContextProvider = (props) => {
         calculateAge,
         slotDateFormat,
         currency,
-        backendUrl,
         dToken,
         setDToken,
     };

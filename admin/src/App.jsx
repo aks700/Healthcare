@@ -15,13 +15,7 @@ import { DoctorContext } from './context/DoctorContext'
 import DoctorDashboard from './pages/Doctor/DoctorDashboard'
 import DoctorAppointments from './pages/Doctor/DoctorAppointments'
 import DoctorProfile from './pages/Doctor/DoctorProfile'
-import DoctorReviews from './pages/Doctor/DoctorReviews'
-import DoctorBlogs from './pages/Doctor/DoctorBlogs'
-import CreateBlog from './pages/Doctor/CreateBlog'
-import EditBlog from './pages/Doctor/EditBlog'
 
-import AdminBlogs from './pages/Admin/AdminBlogs';
-import BlogAnalytics from './pages/Admin/BlogAnalytics';
 
 const App = () => {
   const { aToken } = useContext(AdminContext);
@@ -41,19 +35,14 @@ const App = () => {
           <Route path="/add-doctor" element={<AddDoctor />} />
           <Route path="/doctor-list" element={<DoctorsList />} />
 
-           {/* Blog Management Routes */}
-          <Route path="/admin-blogs" element={<AdminBlogs />} />
-          <Route path="/blog-analytics" element={<BlogAnalytics />} />
+           
 
           {/* Doctor Route  */}
 
           <Route path="/doctor-dashboard" element={<DoctorDashboard />} />
           <Route path="/doctor-appointments" element={<DoctorAppointments />} />
           <Route path="/doctor-profile" element={<DoctorProfile />} />
-          <Route path="/doctor-reviews" element={<DoctorReviews />} />
-          <Route path='/doctor-blogs' element={<DoctorBlogs />} />
-          <Route path='/create-blog' element={<CreateBlog />} />
-          <Route path='/edit-blog/:id' element={<EditBlog />} />
+
 
         </Routes>
       </div>

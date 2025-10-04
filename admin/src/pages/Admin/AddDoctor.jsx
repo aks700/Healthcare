@@ -18,7 +18,7 @@ const AddDoctor = () => {
     const [about, setAbout] = useState("");
     const [isLoading, setIsLoading] = useState(false);
 
-    const { backendUrl, aToken } = useContext(AdminContext);
+    const {  aToken } = useContext(AdminContext);
 
     const onSubmitHandler = async (event) => {
         event.preventDefault();
@@ -43,8 +43,8 @@ const AddDoctor = () => {
             formData.append("address", JSON.stringify({line1: address1, line2: address2}));
             formData.append("about", about);
 
-            const { data } = await axios.post(backendUrl + "/api/admin/add-doctor", formData, {
-                headers: { aToken }
+            const { data } = await axios.post( "/api/admin/add-doctor", formData, {
+                headers: { Authorization: `Bearer ${aToken}` }
             });
 
             if (data.success) {
