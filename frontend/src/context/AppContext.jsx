@@ -16,7 +16,7 @@ const AppContextProvider = (props) => {
 
     const getDoctorsData = async () => {
         try {
-            const { data } = await axios.get("/api/doctor/list")
+            const { data } = await axios.get("api/doctor/list")
             // console.log(data)
             if (data.success) {
                 setDoctors(data.doctors)
@@ -31,7 +31,7 @@ const AppContextProvider = (props) => {
 
     const loadUserProfileData = async () => {
         try {
-            const { data } = await axios.get("/api/user/get-profile", { headers: { Authorization: `Bearer ${token}` } })
+            const { data } = await axios.get("api/user/get-profile", { headers: { Authorization: `Bearer ${token}` } })
             if (data.success) {
                 setUserData(data.userData)
 
