@@ -25,14 +25,14 @@ const AddDoctor = () => {
         setIsLoading(true);
         
         try {
-            if (!docImg) {
-                toast.error("Please upload a doctor image");
-                setIsLoading(false);
-                return;
-            }
+            // if (!docImg) {
+            //     toast.error("Please upload a doctor image");
+            //     setIsLoading(false);
+            //     return;
+            // }
 
             const formData = new FormData();
-            formData.append("image", docImg);
+            // formData.append("image", docImg);
             formData.append("name", name);
             formData.append("email", email);
             formData.append("password", password);
@@ -44,7 +44,7 @@ const AddDoctor = () => {
             formData.append("about", about);
 
             const { data } = await axios.post( "/api/admin/add-doctor", formData, {
-                headers: { Authorization: `Bearer ${aToken}` }
+                headers: { Authorization: `Bearer ${aToken}`,"Content-Type": "multipart/form-data" }
             });
 
             if (data.success) {
