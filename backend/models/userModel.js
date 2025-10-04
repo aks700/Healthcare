@@ -22,8 +22,11 @@ const userSchema = new mongoose.Schema({
     },
   
     address:{
-        type: String,
-        default:"123 New York, USA",
+        type: Object,
+        default:{
+            line1:"123",
+            line2:"New York"
+        },
         required:false
     },
     gender:{
