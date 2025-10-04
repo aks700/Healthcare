@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/(.*)",      
-      "destination": "https://healthcare-v77f.onrender.com//api/$1"
+      "destination": "https://healthcare-v77f.onrender.com/api/$1"
     },
     {
       "source": "/(.*)",           
