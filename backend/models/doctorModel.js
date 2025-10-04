@@ -43,9 +43,8 @@ const doctorSchema = new mongoose.Schema({
         required: true,
     },
     address:{
-        type: String,
-        default:"456 New York, USA",
-        required: true,
+        type: Object,
+        required: false,
     },
     date:{
         type: Number,
