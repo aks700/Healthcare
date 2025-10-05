@@ -17,7 +17,7 @@ const SPECIALTIES = [
 // BookNowButton Component
 const BookNowButton = () => {
   return (
-    <a href='#speciality'
+    <a 
       className="group bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold flex items-center justify-center gap-2 py-3 px-6 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1 max-w-xs relative overflow-hidden"
     >
       <div className="absolute inset-0 bg-white/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
