@@ -16,8 +16,8 @@ export default function Footer() {
         {/* Right Side - Links */}
         <div className="flex flex-wrap justify-center md:justify-end gap-6 text-sm text-gray-600">
           <a href="/about" className="hover:text-blue-600 transition">About Us</a>
-          <a href="/specialties" className="hover:text-blue-600 transition">Specialties</a>
-          <a href="/appointments" className="hover:text-blue-600 transition">Appointments</a>
+          {/* <a href="/specialties" className="hover:text-blue-600 transition">Specialties</a>
+          <a href="/appointments" className="hover:text-blue-600 transition">Appointments</a> */}
           <a href="/contact" className="hover:text-blue-600 transition">Contact</a>
         </div>
       </div>
